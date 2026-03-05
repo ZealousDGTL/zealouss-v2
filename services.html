@@ -4,18 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services | Zealous Digital - We Build Your Engine</title>
-<meta name="description" content="AI-first business solutions for SMBs: Websites, SEO, Social Media, AI Automation, Workflow Automation. We build engines that run forever.">
-<!-- Open Graph -->
+<meta name="description" content="AI-first business solutions: Websites, SEO, Social Media, AI Automation, Workflow Automation. We build engines that run forever.">
 <meta property="og:title" content="Services | Zealous Digital">
-<meta property="og:description" content="AI-first business solutions for SMBs. We build engines that run forever.">
+<meta property="og:description" content="AI-first business solutions. We build engines that run forever.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zealousseo.com/services.html">
 <meta property="og:image" content="https://zealousseo.com/og-image.jpg">
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Services | Zealous Digital">
-<meta name="twitter:description" content="AI-first business solutions for SMBs. We build engines that run forever.">
-<!-- Favicon -->
+<link rel="canonical" href="https://zealousseo.com/services.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -25,14 +22,13 @@
  * { font-family: 'Inter', sans-serif; }
  .font-display { font-family: 'Space Grotesk', sans-serif; }
  
- /* Animated gradient */
  .gradient-bg { background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%); background-size: 400% 400%; animation: gradient 20s ease infinite; }
  @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
  
- /* Floating circles */
  @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } }
  .orb { animation: float 8s ease-in-out infinite; }
  .orb-2 { animation: float 12s ease-in-out infinite reverse; animation-delay: -3s; }
+ .orb-3 { animation: float 10s ease-in-out infinite; animation-delay: -5s; }
  
  .circle-deco { border-radius: 50%; background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%); }
  .grid-pattern { background-image: linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px); background-size: 50px 50px; }
@@ -43,12 +39,16 @@
  .fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 0.8s ease forwards; }
  @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
  
- /* Accordion */
- .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
- .accordion-open .accordion-content { max-height: 500px; }
+ .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+ .accordion-item.open .accordion-content { max-height: 600px; }
+ .accordion-icon { transition: transform 0.3s ease; }
+ .accordion-item.open .accordion-icon { transform: rotate(180deg); }
+ 
+ .service-card { position: relative; overflow: hidden; }
+ .service-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.1) 100%); opacity: 0; transition: opacity 0.3s; }
+ .service-card:hover::before { opacity: 1; }
 </style>
 
-<!-- JSON-LD Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,59 +56,13 @@
   "name": "Zealous Digital",
   "description": "AI-first business solutions for SMBs. We build the engine for your business.",
   "url": "https://zealousseo.com",
-  "logo": "https://zealousseo.com/logo.svg",
   "image": "https://zealousseo.com/og-image.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Vancouver",
-    "addressRegion": "BC",
-    "addressCountry": "CA"
-  },
-  "areaServed": {
-    "@type": "State",
-    "name": "British Columbia"
-  },
+  "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" },
+  "areaServed": { "@type": "State", "name": "British Columbia" },
   "serviceType": ["Web Development", "SEO", "Social Media Marketing", "AI Automation", "Workflow Automation"],
   "priceRange": "$$",
-  "openingHours": "Mo-Fr 09:00-18:00",
   "telephone": "+1-604-555-0123",
-  "email": "hello@zealousseo.com",
-  "sameAs": [
-    "https://instagram.com/zealousdigital",
-    "https://linkedin.com/company/zealousdigital"
-  ],
-  "knowsAbout": [
-    "https://en.wikipedia.org/wiki/Artificial_intelligence",
-    "https://en.wikipedia.org/wiki/Search_engine_optimization",
-    "https://en.wikipedia.org/wiki/Web_development",
-    "https://en.wikipedia.org/wiki/Marketing_automation"
-  ]
-}
-</script>
-
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What services does Zealous Digital offer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer web development, SEO, social media marketing, AI automation, workflow automation, and growth partnership - all interconnected to power your business engine."
-      }
-    },
-    {
-      "@type": "Question", 
-      "name": "Do you work with businesses outside Vancouver?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes! While we're based in Vancouver, BC, we work with SMBs across Canada and internationally through remote collaboration."
-      }
-    }
-  ]
+  "email": "hello@zealousseo.com"
 }
 </script>
 </head>
@@ -116,214 +70,148 @@
 <!-- Cookie Consent -->
 <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-black/90 border-t border-white/10 p-4 z-50 hidden">
  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
- <p class="text-sm text-gray-400">We use cookies to improve your experience. <a href="privacy.html" class="text-indigo-400 hover:underline">Privacy Policy</a></p>
- <button onclick="document.getElementById('cookieConsent').style.display='none';localStorage.cookieConsent='true'" class="px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-full hover:bg-indigo-500 transition-colors">Accept</button>
+ <p class="text-sm text-gray-400">We use cookies to improve your experience. <a href="privacy.html" class="text-indigo-400 hover:underline">Privacy</a></p>
+ <button onclick="document.getElementById('cookieConsent').style.display='none';localStorage.setItem('cookieConsent','true')" class="px-6 py-2 bg-indigo-600 text-white text-sm font-medium rounded-full hover:bg-indigo-500">Accept</button>
  </div>
 </div>
-<script>if(localStorage.cookieConsent!='true')document.getElementById('cookieConsent').style.display='block'</script>
+<script>if(localStorage.getItem('cookieConsent')!='true')document.getElementById('cookieConsent').style.display='block'</script>
 
 <!-- Animated Background -->
 <div class="fixed inset-0 gradient-bg grid-pattern z-0"></div>
 <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
  <div class="absolute top-20 left-10 w-64 h-64 circle-deco orb"></div>
- <div class="absolute bottom-40 right-20 w-96 h-96 circle-deco orb-2"></div>
+ <div class="absolute top-1/3 right-10 w-96 h-96 circle-deco orb-2"></div>
+ <div class="absolute bottom-20 left-1/3 w-48 h-48 circle-deco orb-3"></div>
+ <div class="absolute top-1/2 left-20 w-56 h-56 circle-deco orb"></div>
 </div>
 
 <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/60 border-b border-white/5">
- <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
- <a href="index.html" class="font-display text-xl font-bold tracking-tight"><span class="text-gradient">Zealous</span></a>
+ <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+ <a href="index.html" class="font-display text-xl font-bold"><span class="text-gradient">Zealous</span></a>
  <nav class="hidden md:flex items-center gap-8">
- <a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Services</a>
- <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
- <a href="index.html#faq" class="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
- <a href="index.html#contact" class="px-5 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors">Let's Talk</a>
+ <a href="index.html#services" class="text-sm text-gray-400 hover:text-white">Services</a>
+ <a href="about.html" class="text-sm text-gray-400 hover:text-white">About</a>
+ <a href="privacy.html" class="text-sm text-gray-400 hover:text-white">Privacy</a>
+ <a href="index.html#contact" class="px-5 py-2 bg-white text-black text-sm font-medium rounded-full">Let's Talk</a>
  </nav>
  </div>
 </header>
 
 <main class="relative z-10 pt-32 pb-20">
-<div class="max-w-4xl mx-auto px-6">
-<!-- Page Title -->
-<div class="text-center mb-16 fade-in">
- <p class="text-indigo-400 text-sm tracking-widest uppercase mb-4">Services</p>
- <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">The Engine<br><span class="text-gradient">Systems</span></h1>
+<div class="max-w-6xl mx-auto px-6">
+<!-- Hero -->
+<div class="text-center mb-20">
+ <p class="text-indigo-400 text-sm tracking-widest uppercase mb-4">What We Build</p>
+ <h1 class="font-display text-5xl md:text-7xl font-bold mb-6">The Engine<br><span class="text-gradient">Systems</span></h1>
  <p class="text-gray-400 text-lg max-w-2xl mx-auto">Six interconnected systems. One purpose: make your business run harder, longer.</p>
 </div>
 
-<!-- TL;DR -->
-<div class="bg-white/5 border border-indigo-500/30 rounded-2xl p-6 mb-16">
- <h3 class="font-bold text-indigo-400 mb-2">TL;DR</h3>
- <p class="text-gray-400 text-sm">We don't do isolated services. Every system connects to your growth engine. Pick your starting point—we'll map the rest.</p>
-</div>
-
-<!-- Services -->
-<div class="space-y-6">
+<!-- Services Grid with Images -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
 <!-- Ignition -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-indigo-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Ignition</h3><p class="text-gray-500 text-sm">Web Development & Digital Foundation</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-indigo-900/50 to-purple-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiM2MzZmNWYiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-indigo-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">Your digital foundation. Websites that don't just exist—they ignite growth from day one. Performance-first architecture, SEO-optimized from the core, conversion-focused UX.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ Custom Web Development</li>
- <li>✓ Performance Optimization</li>
- <li>✓ Mobile-First Design</li>
- <li>✓ CMS Integration</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Ignition</h3>
+ <p class="text-gray-400 text-sm mb-4">Web Development & Digital Foundation</p>
+ <p class="text-gray-500 text-sm">Your digital foundation. Websites that ignite growth from day one.</p>
  </div>
 </div>
 
 <!-- Horsepower -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Horsepower</h3><p class="text-gray-500 text-sm">SEO & Search Visibility</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-purple-900/50 to-pink-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiNhODU1ZjciIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-purple-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">SEO that drives real traction. Not vanity metrics—actual engine RPM for your visibility. Technical SEO, content strategy, local dominance.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ Technical SEO Audit</li>
- <li>✓ On-Page Optimization</li>
- <li>✓ Local SEO</li>
- <li>✓ Content Strategy</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Horsepower</h3>
+ <p class="text-gray-400 text-sm mb-4">SEO & Search Visibility</p>
+ <p class="text-gray-500 text-sm">Real traction. Not vanity metrics—actual RPM for your visibility.</p>
  </div>
 </div>
 
 <!-- Fuel -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-pink-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Fuel</h3><p class="text-gray-500 text-sm">Social Media & Content</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-pink-900/50 to-rose-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiNmMzJiNTkiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-pink-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">Content that burns hot. Social media, video, and brand storytelling that keeps your engine fed. Content pillars, community management, video production.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ Content Strategy</li>
- <li>✓ Video Production</li>
- <li>✓ Community Management</li>
- <li>✓ Brand Voice</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Fuel</h3>
+ <p class="text-gray-400 text-sm mb-4">Social Media & Content</p>
+ <p class="text-gray-500 text-sm">Content that burns hot. Keeps your engine fed.</p>
  </div>
 </div>
 
 <!-- Fuel Injection -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Fuel Injection</h3><p class="text-gray-500 text-sm">AI Automation</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-cyan-900/50 to-blue-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiM0ZThlN2EiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-cyan-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">AI that delivers precision. Smart systems that optimize in real-time—fuel where it matters most. Chatbots, content generation, predictive analytics.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ AI Chatbots</li>
- <li>✓ Smart Content</li>
- <li>✓ Predictive Analytics</li>
- <li>✓ Integration with existing tools</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Fuel Injection</h3>
+ <p class="text-gray-400 text-sm mb-4">AI Automation</p>
+ <p class="text-gray-500 text-sm">Smart systems that optimize in real-time.</p>
  </div>
 </div>
 
 <!-- Cooling -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Cooling</h3><p class="text-gray-500 text-sm">Workflow Automation</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-emerald-900/50 to-teal-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiMyZDU3M2EiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-emerald-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">Workflow automation that keeps everything running smooth. No overheating. No burnout. Just flow. GHL, n8n, CRM integration.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ GHL Automation</li>
- <li>✓ n8n Workflows</li>
- <li>✓ CRM Integration</li>
- <li>✓ Pipeline Automation</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Cooling</h3>
+ <p class="text-gray-400 text-sm mb-4">Workflow Automation</p>
+ <p class="text-gray-500 text-sm">Everything running smooth. No burnout. Just flow.</p>
  </div>
 </div>
 
 <!-- Transmission -->
-<div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
- <button class="accordion-toggle w-full p-6 flex items-center justify-between text-left" onclick="this.parentElement.classList.toggle('accordion-open')">
- <div class="flex items-center gap-4">
- <div class="w-12 h-12 bg-amber-600/20 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
- <div><h3 class="font-display text-xl font-bold">Transmission</h3><p class="text-gray-500 text-sm">Analytics & Reporting</p></div>
+<div class="service-card group bg-white/5 border border-white/10 rounded-2xl overflow-hidden card-hover">
+ <div class="aspect-video bg-gradient-to-br from-amber-900/50 to-orange-900/50 flex items-center justify-center relative overflow-hidden">
+ <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOHptMCAzMmMtNy43MzIgMC0xNC02LjI2OC0xNC0xNHM2LjI2OC0xNCAxNC0xNCAxNCA2LjI2OCAxNCAxNC02LjI2OCAxNC0xNHoiIGZpbGw9IiNmMzBhNTkiIGZpbGwtb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-50"></div>
+ <svg class="w-16 h-16 text-amber-400 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
  </div>
- <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
- </button>
- <div class="accordion-content px-6 pb-6">
- <p class="text-gray-400 mb-4">Data that moves. Analytics and reporting that shift gears—from raw numbers to actionable intelligence.</p>
- <ul class="grid md:grid-cols-2 gap-2 text-sm text-gray-500">
- <li>✓ Custom Dashboards</li>
- <li>✓ Revenue Attribution</li>
- <li>✓ Performance Reporting</li>
- <li>✓ ROI Tracking</li>
- </ul>
+ <div class="p-6">
+ <h3 class="font-display text-xl font-bold mb-2">Transmission</h3>
+ <p class="text-gray-400 text-sm mb-4">Analytics & Reporting</p>
+ <p class="text-gray-500 text-sm">Data that moves. Raw numbers to actionable intelligence.</p>
  </div>
 </div>
 </div>
 
 <!-- CTA -->
-<section class="mt-20 text-center">
+<div class="text-center">
  <h2 class="font-display text-3xl font-bold mb-6">Map Your Engine</h2>
- <p class="text-gray-400 mb-8 max-w-xl mx-auto">Every business is different. Let's find your starting point and build from there.</p>
- <a href="index.html#contact" class="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-500 transition-colors">Book a Call</a>
-</section>
+ <p class="text-gray-400 mb-8 max-w-xl mx-auto">Every business is different. Let's find your starting point.</p>
+ <a href="index.html#contact" class="inline-block px-8 py-4 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-500 transition-all card-hover">Book a Call</a>
+</div>
 </div>
 </main>
 
-<!-- Footer -->
 <footer class="border-t border-white/10 py-12">
- <div class="max-w-7xl mx-auto px-6 lg:px-12">
+ <div class="max-w-7xl mx-auto px-6">
  <div class="flex flex-col md:flex-row justify-between items-center gap-6">
  <div>
  <a href="index.html" class="font-display text-xl font-bold"><span class="text-gradient">Zealous</span></a>
  <p class="text-gray-500 text-sm mt-2">We Build Your Engine.</p>
  </div>
  <div class="flex gap-8">
- <a href="index.html#services" class="text-gray-500 hover:text-white transition-colors text-sm">Services</a>
- <a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm">About</a>
- <a href="privacy.html" class="text-gray-500 hover:text-white transition-colors text-sm">Privacy</a>
+ <a href="index.html#services" class="text-gray-500 hover:text-white text-sm">Services</a>
+ <a href="about.html" class="text-gray-500 hover:text-white text-sm">About</a>
+ <a href="privacy.html" class="text-gray-500 hover:text-white text-sm">Privacy</a>
  </div>
  <p class="text-gray-600 text-sm">© 2024 Zealous Digital.</p>
  </div>
  </div>
 </footer>
-
-<script>
-// Accordion
-document.querySelectorAll('.accordion-toggle').forEach(btn => {
- btn.addEventListener('click', () => {
- const item = btn.parentElement;
- item.classList.toggle('accordion-open');
- const svg = btn.querySelector('svg');
- svg.style.transform = item.classList.contains('accordion-open') ? 'rotate(180deg)' : 'rotate(0)';
- });
-});
-// Scroll animations
-const observer = new IntersectionObserver((entries) => {
- entries.forEach(entry => {
- if (entry.isIntersecting) { entry.target.style.animation = 'fadeIn 0.8s ease forwards'; }
- });
-}, { threshold: 0.1 });
-document.querySelectorAll('section, .fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
